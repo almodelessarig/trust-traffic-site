@@ -972,6 +972,32 @@
         let answers = {};
         let modalAnswers = {};
 
+        // UTM параметры
+        function getUTMParams() {
+            const params = new URLSearchParams(window.location.search);
+            return {
+                utm_source: params.get('utm_source') || '',
+                utm_medium: params.get('utm_medium') || '',
+                utm_campaign: params.get('utm_campaign') || '',
+                utm_term: params.get('utm_term') || '',
+                utm_content: params.get('utm_content') || ''
+            };
+        }
+
+        // Сохраняем UTM при загрузке
+        const utmParams = getUTMParams();
+        if (utmParams.utm_source) {
+            sessionStorage.setItem('utm_params', JSON.stringify(utmParams));
+        }
+
+        // Получаем UTM (из URL или sessionStorage)
+        function getSavedUTM() {
+            const current = getUTMParams();
+            if (current.utm_source) return current;
+            const saved = sessionStorage.getItem('utm_params');
+            return saved ? JSON.parse(saved) : {};
+        }
+
         // 1. Scroll Progress & Sticky CTA
         let formVisible = false;
         let heroVisible = true;
@@ -1055,10 +1081,38 @@
             document.getElementById('modal-progress-bar').style.width = (next * 25) + "%";
         }
 
-        function modalSubmitForm() {
+        async function modalSubmitForm() {
             const phone = document.getElementById('modal-phone').value;
             if (phone.length < 10) { alert('Введите корректный номер WhatsApp'); return; }
-            console.log('Lead:', { ...modalAnswers, phone });
+
+            const utm = getSavedUTM();
+            const leadData = {
+                phone: phone,
+                step1: modalAnswers.step1 || '',
+                step2: modalAnswers.step2 || '',
+                step3: modalAnswers.step3 || '',
+                source: 'Модальное окно',
+                utm_source: utm.utm_source || '',
+                utm_medium: utm.utm_medium || '',
+                utm_campaign: utm.utm_campaign || '',
+                utm_term: utm.utm_term || '',
+                utm_content: utm.utm_content || '',
+                page_url: window.location.href,
+                referrer: document.referrer || ''
+            };
+
+            try {
+                const response = await fetch('/api/send-telegram', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(leadData)
+                });
+                const result = await response.json();
+                console.log('Lead sent:', result);
+            } catch (error) {
+                console.error('Error sending lead:', error);
+            }
+
             window.location.href = "/thanks";
         }
 
@@ -1086,11 +1140,38 @@
             document.getElementById('progress-bar').style.width = (next * 25) + "%";
         }
 
-        function submitForm() {
+        async function submitForm() {
             const phone = document.getElementById('phone').value;
             if (phone.length < 10) { alert('Введите корректный номер WhatsApp'); return; }
-            // Submit Logic Here (API Call)
-            console.log('Lead:', { ...answers, phone });
+
+            const utm = getSavedUTM();
+            const leadData = {
+                phone: phone,
+                step1: answers.step1 || '',
+                step2: answers.step2 || '',
+                step3: answers.step3 || '',
+                source: 'Форма на странице',
+                utm_source: utm.utm_source || '',
+                utm_medium: utm.utm_medium || '',
+                utm_campaign: utm.utm_campaign || '',
+                utm_term: utm.utm_term || '',
+                utm_content: utm.utm_content || '',
+                page_url: window.location.href,
+                referrer: document.referrer || ''
+            };
+
+            try {
+                const response = await fetch('/api/send-telegram', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(leadData)
+                });
+                const result = await response.json();
+                console.log('Lead sent:', result);
+            } catch (error) {
+                console.error('Error sending lead:', error);
+            }
+
             window.location.href = "/thanks";
         }
 
