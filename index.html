@@ -212,6 +212,13 @@
         .hero .badges { gap: 8px; margin-bottom: 24px; }
         .hero .badge { padding: 6px 12px; font-size: 12px; }
 
+        /* --- HERO MOBILE REORDER --- */
+        .hero-headline { text-align: center; font-size: 24px; line-height: 1.25; }
+        .hero-subtitle { text-align: center; }
+        .hero-cta-block { margin: 20px 0; }
+        .hero-bullets { margin-top: 24px; }
+        .hero-warning { margin-top: 16px; text-align: center; }
+
         /* --- COMPARISON GRID MOBILE --- */
         .comparison-grid { grid-template-columns: 1fr !important; }
 
@@ -244,6 +251,11 @@
             .hero .bullets { font-size: 17px; margin: 24px 0; }
             .hero .badges { gap: 10px; margin-bottom: 30px; }
             .hero .badge { padding: 8px 16px; font-size: 14px; }
+
+            /* --- HERO DESKTOP RESET --- */
+            .hero-headline { text-align: left; font-size: 44px; line-height: 1.2; }
+            .hero-subtitle { text-align: left; }
+            .hero-warning { text-align: left; }
 
             .bento-grid { grid-template-columns: 1fr 1fr; }
             .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -279,15 +291,20 @@
         <section class="hero" style="background: linear-gradient(135deg, #0F0A1E 0%, #1A0B3E 100%); display: flex; align-items: center;">
             <div class="container hero-inner">
                 <div class="hero-content fade-up">
-                    <h1 class="text-white">Построим управляемый поток платежеспособных клиентов на юридические услуги с увеличением выручки <span class="text-gradient">x2-x10 за 30-60 дней</span></h1>
-
-                    <p style="color: #D1D5DB; font-size: 17px; margin: 16px 0 12px;">По авторской технологии системных продаж юридических услуг «Юрист на Миллион»</p>
-
-                    <div style="background: linear-gradient(90deg, var(--primary), var(--primary-light)); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px;">
+                    <div class="hero-positioning" style="background: linear-gradient(90deg, var(--primary), var(--primary-light)); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px;">
                         <p style="color: white; font-weight: 700; font-size: 14px; margin: 0; text-align: center;">Единственное агентство в Казахстане, которое специализируется на работе с юридическими компаниями</p>
                     </div>
 
-                    <ul class="bullets" style="color: #D1D5DB; list-style: none; padding: 0;">
+                    <h1 class="text-white hero-headline">Построим управляемый поток платежеспособных клиентов на юридические услуги с увеличением выручки <span class="text-gradient">x2-x10 за 30-60 дней</span></h1>
+
+                    <p class="hero-subtitle" style="color: #D1D5DB; font-size: 17px; margin: 16px 0 12px;">По авторской технологии системных продаж юридических услуг «Юрист на Миллион»</p>
+
+                    <div class="hero-cta-block">
+                        <p style="font-size: 15px; color: #D1D5DB; margin-bottom: 16px; text-align: center;">Оставьте заявку на консультацию по привлечению клиентов на юридические услуги прямо сейчас</p>
+                        <button onclick="openModal()" class="btn btn-pulse">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
+                    </div>
+
+                    <ul class="bullets hero-bullets" style="color: #D1D5DB; list-style: none; padding: 0;">
                         <li style="display: flex; align-items: flex-start; gap: 10px;">
                             <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
                             <span><strong style="color: white;">15 компаний</strong> уже используют технологию</span>
@@ -302,10 +319,7 @@
                         </li>
                     </ul>
 
-                    <p style="font-size: 14px; color: var(--accent-yellow); margin-bottom: 20px; font-weight: 600;">⚠️ Только для предпринимателей из юридического бизнеса</p>
-
-                    <p style="font-size: 15px; color: #D1D5DB; margin-bottom: 16px; text-align: center;">Оставьте заявку на консультацию по привлечению клиентов на юридические услуги прямо сейчас</p>
-                    <button onclick="openModal()" class="btn btn-pulse">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
+                    <p class="hero-warning" style="font-size: 14px; color: var(--accent-yellow); font-weight: 600;">⚠️ Только для предпринимателей из юридического бизнеса</p>
                 </div>
 
                 <div class="hero-img-wrapper fade-up">
