@@ -158,6 +158,14 @@
         .case-val.action { background: #FEF3C7; color: var(--accent-yellow); }
         .case-val.good { background: #ECFDF5; color: var(--accent-green); font-weight: 700; border: 1px solid var(--accent-green); }
 
+        /* --- VIDEO THUMBNAIL --- */
+        .video-thumb { position: relative; margin-top: 12px; border-radius: 8px; overflow: hidden; cursor: pointer; aspect-ratio: 16/9; }
+        .video-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+        .video-thumb:hover img { transform: scale(1.05); }
+        .video-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 68px; height: 48px; background: rgba(255,0,0,0.9); border-radius: 12px; transition: 0.2s; }
+        .video-play::before { content: ''; position: absolute; top: 50%; left: 54%; transform: translate(-50%, -50%); border: 10px solid transparent; border-left: 16px solid white; }
+        .video-thumb:hover .video-play { background: rgba(255,0,0,1); transform: translate(-50%, -50%) scale(1.1); }
+
         .form-container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 16px; box-shadow: 0 10px 40px rgba(0,0,0,0.2); }
         .form-progress { height: 6px; background: #eee; border-radius: 3px; margin-bottom: 20px; overflow: hidden; }
         .form-bar { height: 100%; background: var(--primary); width: 25%; transition: width 0.3s; }
@@ -476,7 +484,10 @@
                         <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Выручка 3 млн/мес, все клиенты по сарафану. Пробовал таргет — получил заявки от людей без денег.</p>
                         <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> позиционирование, реклама с квалификацией, наняли и обучили менеджера, настроили AmoCRM.</p>
                         <div class="case-val good" style="font-size: 18px; text-align: center;">30 млн/мес (x10) за 3 месяца</div>
-                        <button onclick="openVideo('VuYx2K0o4J8')" style="background: linear-gradient(135deg, var(--accent-red), #dc2626); height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; margin-top: 12px; border: none; width: 100%; font-size: 16px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">▶️ Смотреть видео-отзыв</button>
+                        <div class="video-thumb" onclick="openVideo('VuYx2K0o4J8')">
+                            <img src="https://img.youtube.com/vi/VuYx2K0o4J8/hqdefault.jpg" alt="Видео-отзыв Олжас">
+                            <div class="video-play"></div>
+                        </div>
                     </div>
                     <div class="card fade-up">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -487,7 +498,10 @@
                         <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Полная зависимость от рекомендаций. Клиенты приходили нестабильно, невозможно планировать.</p>
                         <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> рекламная воронка, обработка заявок, система доводки до договора.</p>
                         <div class="case-val good" style="font-size: 18px; text-align: center;">+7,6 млн за 1.5 месяца</div>
-                        <button onclick="openVideo('JR19eQuStMo')" style="background: linear-gradient(135deg, var(--accent-red), #dc2626); height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; margin-top: 12px; border: none; width: 100%; font-size: 16px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">▶️ Смотреть видео-отзыв</button>
+                        <div class="video-thumb" onclick="openVideo('JR19eQuStMo')">
+                            <img src="https://img.youtube.com/vi/JR19eQuStMo/hqdefault.jpg" alt="Видео-отзыв Дархан">
+                            <div class="video-play"></div>
+                        </div>
                     </div>
                     <div class="card fade-up">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -498,7 +512,10 @@
                         <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Хотел масштабировать компанию и выйти на новый уровень выручки.</p>
                         <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> запуск воронки с нуля — лендинг, скрипты, CRM, обучение менеджеров.</p>
                         <div class="case-val good" style="font-size: 18px; text-align: center;">Рост выручки x3</div>
-                        <button onclick="openVideo('9qM8vYPJuWQ')" style="background: linear-gradient(135deg, var(--accent-red), #dc2626); height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; margin-top: 12px; border: none; width: 100%; font-size: 16px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">▶️ Смотреть видео-отзыв</button>
+                        <div class="video-thumb" onclick="openVideo('9qM8vYPJuWQ')">
+                            <img src="https://img.youtube.com/vi/9qM8vYPJuWQ/hqdefault.jpg" alt="Видео-отзыв Азамат">
+                            <div class="video-play"></div>
+                        </div>
                     </div>
                     <div class="card fade-up">
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -509,7 +526,10 @@
                         <p style="font-size: 14px; color: #666; margin-bottom: 12px;">0 продаж по направлению БФЛ. Хотел запустить новое направление в юрфирме.</p>
                         <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> полное внедрение системы с нуля — от рекламы до скриптов.</p>
                         <div class="case-val good" style="font-size: 18px; text-align: center;">3,1 млн за 39 дней</div>
-                        <button onclick="openVideo('sPhJVnpbZpI')" style="background: linear-gradient(135deg, var(--accent-red), #dc2626); height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: white; margin-top: 12px; border: none; width: 100%; font-size: 16px; transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">▶️ Смотреть видео-отзыв</button>
+                        <div class="video-thumb" onclick="openVideo('sPhJVnpbZpI')">
+                            <img src="https://img.youtube.com/vi/sPhJVnpbZpI/hqdefault.jpg" alt="Видео-отзыв Виктор">
+                            <div class="video-play"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 40px;">
