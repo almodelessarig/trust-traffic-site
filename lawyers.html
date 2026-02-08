@@ -220,6 +220,8 @@
         .hero-warning { margin-top: 16px; text-align: center; }
         .hero-photo-block { order: 2; text-align: center; }
         .hero-caption { color: #9CA3AF; font-size: 12px; text-align: center; margin-top: 12px; line-height: 1.4; max-width: 220px; margin-left: auto; margin-right: auto; }
+        .hero-img-mobile { display: block; }
+        .hero-img-desktop { display: none; }
 
         /* --- ALL BUTTONS PULSE --- */
         .btn { animation: pulse 2s infinite; }
@@ -255,7 +257,10 @@
             .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
             .hero-content { order: 1; }
             .hero-photo-block { order: 2; }
-            .hero-img-wrapper { width: 420px; height: 420px; border-width: 4px; }
+            .hero-img-wrapper { width: 420px; height: auto; border-radius: 0; border: none; box-shadow: none; overflow: visible; }
+            .hero-img { transform: none; object-fit: contain; }
+            .hero-img-mobile { display: none; }
+            .hero-img-desktop { display: block; }
             .hero h1 { font-size: 44px; }
             .hero .bullets { font-size: 17px; margin: 24px 0; }
             .hero .badges { gap: 10px; margin-bottom: 30px; }
@@ -335,12 +340,15 @@
                 </div>
 
                 <div class="hero-photo-block fade-up">
-                    <div class="hero-img-wrapper">
+                    <div class="hero-img-wrapper hero-img-mobile">
                         <img src="ava-400.jpg"
                              srcset="ava-400.jpg 400w, ava-800.jpg 800w"
-                             sizes="(max-width: 767px) 200px, 420px"
+                             sizes="200px"
                              alt="Алексей Горбовской"
                              class="hero-img">
+                    </div>
+                    <div class="hero-img-desktop">
+                        <img src="ava2.png" alt="Алексей Горбовской" style="max-width: 100%; height: auto;">
                     </div>
                     <p class="hero-caption">Алексей Горбовской, эксперт по маркетингу и продажам юридического бизнеса с 7-летним опытом</p>
                 </div>
