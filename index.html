@@ -172,6 +172,17 @@
         .hero .badges { gap: 8px; margin-bottom: 24px; }
         .hero .badge { padding: 6px 12px; font-size: 12px; }
 
+        /* --- COMPARISON GRID MOBILE --- */
+        .comparison-grid { grid-template-columns: 1fr !important; }
+
+        /* --- METRICS GRID MOBILE --- */
+        .metrics-grid { grid-template-columns: 1fr !important; }
+        .metrics-vs { display: none; }
+
+        /* --- STICKY CTA MOBILE --- */
+        .sticky-cta-text { display: none; }
+        .sticky-cta .btn { width: 100% !important; }
+
         /* --- FOOTER MOBILE --- */
         .footer-grid { display: flex; flex-direction: column; gap: 32px; }
         .footer-col { }
@@ -205,6 +216,12 @@
             .footer-col { flex: 1; }
             .footer-col:first-child { max-width: 280px; }
             .footer-divider { display: none; }
+
+            .comparison-grid { grid-template-columns: 1fr 1fr !important; }
+            .metrics-grid { grid-template-columns: 1fr auto 1fr !important; }
+            .metrics-vs { display: block !important; }
+            .sticky-cta-text { display: block !important; }
+            .sticky-cta .btn { width: auto !important; }
         }
     </style>
 </head>
@@ -222,20 +239,26 @@
         <section class="hero" style="background: linear-gradient(135deg, #0F0A1E 0%, #1A0B3E 100%); display: flex; align-items: center;">
             <div class="container hero-inner">
                 <div class="hero-content fade-up">
-                    <h1 class="text-white">Как владельцу юридической компании выйти на стабильные <span class="text-gradient">10-30 млн ₸/мес</span></h1>
+                    <h1 class="text-white">Построим управляемый поток платежеспособных клиентов на юридические услуги с увеличением выручки <span class="text-gradient">x2-x10 за 30-60 дней</span></h1>
+
+                    <p style="color: #D1D5DB; font-size: 17px; margin: 16px 0 12px;">По авторской технологии системных продаж юридических услуг «Юрист на Миллион»</p>
+
+                    <div style="background: linear-gradient(90deg, var(--primary), var(--primary-light)); padding: 12px 20px; border-radius: 8px; margin-bottom: 20px;">
+                        <p style="color: white; font-weight: 700; font-size: 14px; margin: 0; text-align: center;">Единственное агентство в Казахстане, которое специализируется на работе с юридическими компаниями</p>
+                    </div>
 
                     <ul class="bullets" style="color: #D1D5DB; list-style: none; padding: 0;">
                         <li style="display: flex; align-items: flex-start; gap: 10px;">
                             <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
-                            <span>Авторская система «Юрист на Миллион» — <strong style="color: white;">15 компаний</strong> уже используют</span>
+                            <span><strong style="color: white;">15 компаний</strong> уже используют технологию</span>
                         </li>
                         <li style="display: flex; align-items: flex-start; gap: 10px;">
                             <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
-                            <span>Средний рост выручки — <strong style="color: white;">х3 за 90 дней</strong></span>
+                            <span>Средний рост выручки клиентов — <strong style="color: white;">x5 за 60 дней</strong></span>
                         </li>
                         <li style="display: flex; align-items: flex-start; gap: 10px;">
                             <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
-                            <span>Работает только если у вас <strong style="color: white;">от 2 юристов</strong> в команде</span>
+                            <span><strong style="color: white;">Гарантия результата.</strong> Работаем на продажи, а не просто заявки</span>
                         </li>
                     </ul>
 
@@ -268,31 +291,31 @@
                     <div class="card pain-card fade-up">
                         <span class="pain-icon">📉</span>
                         <h3>То густо, то пусто</h3>
-                        <p>В хороший месяц — 3-4 клиента. В плохой — ноль. Нельзя предсказать доход.</p>
+                        <p>В январе — 8 договоров. В феврале — ни одного. Невозможно платить зарплату стабильно, потому что приток клиентов — лотерея.</p>
                     </div>
                     <div class="card pain-card fade-up">
                         <span class="pain-icon">💸</span>
                         <h3>Мелкие чеки</h3>
-                        <p>Вместо крупных корпоративных дел — мелкие консультации, которые съедают всё время.</p>
+                        <p>Звонят и спрашивают «сколько стоит консультация на 15 минут?» Крупные клиенты уходят к конкурентам, которые выглядят солиднее в интернете.</p>
                     </div>
                     <div class="card pain-card fade-up">
                         <span class="pain-icon">🏃</span>
                         <h3>Бегаете за клиентами</h3>
-                        <p>Вы звоните, напоминаете, уговариваете. Это унизительно для эксперта.</p>
+                        <p>Клиент сказал «я подумаю» — и пропал. Вы перезваниваете, пишете в WhatsApp, а в ответ — тишина. При этом вы — эксперт, а не продавец.</p>
                     </div>
                     <div class="card pain-card fade-up">
                         <span class="pain-icon">📊</span>
                         <h3>Финансовые качели</h3>
-                        <p>Доход скачет от 5 млн до 800 тыс. Невозможно планировать развитие.</p>
+                        <p>В прошлом месяце хотели нанять ещё одного юриста. В этом — думаете, чем платить аренду. Планировать развитие невозможно.</p>
                     </div>
                     <div class="card pain-card fade-up" style="grid-column: 1/-1;">
                         <span class="pain-icon">🔥</span>
                         <h3>Реклама не работает</h3>
-                        <p>Сливали бюджеты на таргетологов, получали заявки от "халявщиков" на бесплатные советы.</p>
+                        <p>Наняли таргетолога за 150К, сделали сайт за 500 000, потратили на рекламу 300 000, получили 40 заявок — ни одна не дошла до договора. «Лиды нецелевые» — говорит таргетолог. «Реклама не работает» — думаете вы.</p>
                     </div>
                 </div>
                 <div class="card fade-up" style="background: #FFF7ED; margin-top: 30px; border: 1px solid var(--accent-yellow);">
-                    <p><strong>Горькая правда:</strong> Ваши конкуренты (которые как юристы ХУЖЕ вас) растут, потому что у них есть СИСТЕМА привлечения. У вас — нет.</p>
+                    <p><strong>Важно понять:</strong> Дело не в том, что кто-то лучший юрист. Дело в системе маркетинга и продаж. Компании, у которых выстроен маркетинг и продажи, растут стабильно — даже если их юристы слабее ваших. Хорошая новость: систему можно построить.</p>
                 </div>
             </div>
         </section>
@@ -313,6 +336,46 @@
             </div>
         </section>
 
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="text-center fade-up">Почему универсальное агентство не решит вашу задачу</h2>
+                <p class="text-center text-sec fade-up" style="margin-bottom: 40px;">Вы можете нанять агентство, которое вчера продвигало доставку еды, а сегодня возьмётся за вашу юрфирму. Они дадут вам заявки. Но:</p>
+
+                <div class="grid comparison-grid fade-up" style="grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div class="card" style="background: #f8f8f8; border: 1px solid #e0e0e0; opacity: 0.9;">
+                        <h3 style="color: #666; margin-bottom: 20px; font-size: 18px;">Обычное агентство</h3>
+                        <ul style="display: grid; gap: 12px; font-size: 15px; color: #555;">
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Универсальный таргетолог, который вчера продвигал барбершоп</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Даёт заявки и умывает руки</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Гарантирует «лиды» — но заявка это не деньги</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Не знает, что реально работает в рекламе юридических услуг</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Не настроит CRM под юридическую воронку</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Не напишет скрипты для менеджера</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-red);">✗</span> Отчитывается количеством заявок</li>
+                        </ul>
+                    </div>
+                    <div class="card" style="background: linear-gradient(135deg, rgba(74,0,224,0.05), rgba(107,47,245,0.1)); border: 2px solid var(--primary);">
+                        <h3 style="color: var(--primary); margin-bottom: 20px; font-size: 18px;">Система «Юрист на Миллион»</h3>
+                        <ul style="display: grid; gap: 12px; font-size: 15px;">
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Маркетолог с опытом 2 года в юридическом маркетинге и 7 лет в digital</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Строит воронку от заявки до подписанного договора</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Гарантирует минимум x2 к выручке от вложений по договору</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Знает цикл сделки и смыслы, которые реально цепляют клиентов</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Внедряет AmoCRM под юридическую специфику</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Обучает менеджера скриптам продаж юридических услуг</li>
+                            <li style="display: flex; gap: 10px;"><span style="color: var(--accent-green);">✓</span> Отчитывается деньгами на вашем счёте</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="text-center fade-up" style="margin-top: 30px; font-style: italic; color: var(--text-sec);">Мы реализовали более 15 проектов в юридической нише. Поэтому знаем вашу специфику лучше, чем любое универсальное агентство.</p>
+
+                <div class="text-center" style="margin-top: 30px;">
+                    <button onclick="openModal()" class="btn">ЗАПИСАТЬСЯ НА ДИАГНОСТИКУ →</button>
+                </div>
+            </div>
+        </section>
+
         <section class="section">
             <div class="container">
                 <h2 class="text-center fade-up">Система «Юрист на Миллион»</h2>
@@ -321,44 +384,48 @@
                 <div class="system-timeline">
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>1. Нишевание и УТП</h3>
-                        <p>Находим вашу уникальность. Выделяемся среди безликой толпы. Оффер становится безальтернативным.</p>
+                        <h3>1. Специализация и позиционирование</h3>
+                        <p>Определяем, на каких делах вы зарабатываете больше всего. Формулируем позиционирование и сильное торговое предложение, от которого клиенту сложно отказаться.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>2. Каскадное привлечение</h3>
-                        <p>Таргет/Контекст → Квалификация лида → Неотразимое предложение, которое приводит оплаты.</p>
+                        <h3>2. Реклама, которая приводит платёжеспособных клиентов</h3>
+                        <p>Настраиваем Google/Instagram рекламу на людей с конкретной проблемой — банкротство, взыскание долгов, страховые споры. Фильтруем нецелевых до того, как они отнимут ваше время.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>3. Маркетинговые активы</h3>
-                        <p>CRM, ИИ-менеджеры 24/7, видео-продакшн. Активы, которые продают ВМЕСТО вас.</p>
+                        <h3>3. Автоматизация первого контакта</h3>
+                        <p>CRM фиксирует каждую заявку. Автоматические сообщения прогревают клиента до звонка. Ни одна заявка не теряется.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>4. Стандартизация продаж</h3>
-                        <p>Скрипт заявки, доводки, продажи. Менеджер работает по системе, а не по настроению.</p>
+                        <h3>4. Скрипты и регламенты продаж</h3>
+                        <p>Менеджер работает по проверенному сценарию: что говорить при первом звонке, как обрабатывать «дорого», как довести до договора.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>5. Разделение ролей</h3>
-                        <p>ИИ квалифицирует и прогревает. Юрист закрывает сделку. Каждый делает своё дело.</p>
+                        <h3>5. Каждый делает своё дело</h3>
+                        <p>Автоматика обрабатывает входящие и квалифицирует. Менеджер назначает встречу. Юрист закрывает сделку. Никто не делает чужую работу.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>6. Формула 11111</h3>
-                        <p>1 ЦА + 1 Боль + 1 Продукт + 1 Источник + 1 Воронка = Предсказуемый миллион.</p>
+                        <h3>6. Фокус = деньги</h3>
+                        <p>Одна целевая аудитория, одна ключевая услуга, один канал привлечения. Без распыления — максимум результата при минимуме бюджета.</p>
                     </div>
                     <div class="system-item fade-up">
                         <div class="system-marker"></div>
-                        <h3>7. Контроль KPI</h3>
-                        <p>Управляем только тем, что можем измерить (Лиды → Квал → Встречи → Оплаты).</p>
+                        <h3>7. Прозрачная аналитика</h3>
+                        <p>Вы видите в реальном времени: сколько заявок, сколько дошло до встречи, сколько оплатило. Управляем цифрами, а не ощущениями.</p>
                     </div>
                 </div>
                 
                 <div class="card fade-up" style="background: linear-gradient(90deg, #10B981, #059669); color: white; margin-top: 30px;">
                     <h3>Мы делаем ВСЁ под ключ</h3>
-                    <p>Не просто «крутим рекламу», а строим систему. Масштабируем продажи x2-x10 за 90 дней. Все активы остаются у вас.</p>
+                    <p>Не просто «крутим рекламу», а строим систему. Масштабируем продажи x2-x10 за 60 дней. Все активы остаются у вас.</p>
+                </div>
+
+                <div class="text-center" style="margin-top: 30px;">
+                    <button onclick="openModal()" class="btn">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
                 </div>
             </div>
         </section>
@@ -366,42 +433,47 @@
         <section class="section section-dark">
             <div class="container">
                 <h2 class="text-white fade-up">Результаты 15 компаний</h2>
+                <p class="fade-up" style="color: #ccc; text-align: center; margin-bottom: 40px;">Банкротство физических лиц, взыскание долгов, семейные споры, корпоративное право — мы знаем, как продавать каждую из этих услуг, потому что уже делали это для 15 компаний.</p>
                 <div class="cases-grid" style="margin-top: 40px;">
                     <div class="card fade-up">
-                        <h3>ОЛЖАС, АЛМАТЫ</h3>
-                        <div class="case-row">
-                            <div class="case-val bad">Было: 3 млн (сарафан)</div>
-                            <div class="case-val action">Сделали: Вдрили систему</div>
-                            <div class="case-val good">Стало: 30 млн (x10)</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h3 style="margin: 0;">ОЛЖАС, АЛМАТЫ</h3>
+                            <span style="background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">Банкротство ФЛ</span>
                         </div>
-                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333;">▶️ Смотреть видео-отзыв</div>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Выручка 3 млн/мес, все клиенты по сарафану. Пробовал таргет — получил заявки от людей без денег.</p>
+                        <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> позиционирование, реклама с квалификацией, наняли и обучили менеджера, настроили AmoCRM.</p>
+                        <div class="case-val good" style="font-size: 18px; text-align: center;">30 млн/мес (x10) за 3 месяца</div>
+                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333; margin-top: 12px;">▶️ Смотреть видео-отзыв</div>
                     </div>
                     <div class="card fade-up">
-                        <h3>ДАРХАН, АЛМАТЫ</h3>
-                        <div class="case-row">
-                            <div class="case-val bad">Было: Зависимость от рекомендаций</div>
-                            <div class="case-val action">Сделали: Запустили систему</div>
-                            <div class="case-val good">Стало: +7,6 млн за 1.5 мес</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h3 style="margin: 0;">ДАРХАН, АЛМАТЫ</h3>
+                            <span style="background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">Юридические услуги</span>
                         </div>
-                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333;">▶️ Смотреть видео-отзыв</div>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Полная зависимость от рекомендаций. Клиенты приходили нестабильно, невозможно планировать.</p>
+                        <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> рекламная воронка, обработка заявок, система доводки до договора.</p>
+                        <div class="case-val good" style="font-size: 18px; text-align: center;">+7,6 млн за 1.5 месяца</div>
+                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333; margin-top: 12px;">▶️ Смотреть видео-отзыв</div>
                     </div>
                     <div class="card fade-up">
-                        <h3>АСХАТ, АЛМАТЫ</h3>
-                        <div class="case-row">
-                            <div class="case-val bad">Было: 0 с рекламы</div>
-                            <div class="case-val action">Сделали: Запуск с нуля</div>
-                            <div class="case-val good">Стало: 4,4 млн за 3 недели</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h3 style="margin: 0;">АСХАТ, АЛМАТЫ</h3>
+                            <span style="background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">Юридические услуги</span>
                         </div>
-                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333;">▶️ Смотреть видео-отзыв</div>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 12px;">Никогда не запускали рекламу, 0 клиентов с интернета. Работали только на сарафане.</p>
+                        <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> запуск воронки с нуля — лендинг, скрипты, CRM.</p>
+                        <div class="case-val good" style="font-size: 18px; text-align: center;">4,4 млн за 3 недели</div>
+                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333; margin-top: 12px;">▶️ Смотреть видео-отзыв</div>
                     </div>
                     <div class="card fade-up">
-                        <h3>ВИКТОР, КОСТАНАЙ</h3>
-                        <div class="case-row">
-                            <div class="case-val bad">Было: 0 продаж БФЛ</div>
-                            <div class="case-val action">Сделали: Внедрение системы</div>
-                            <div class="case-val good">Стало: 3,1 млн за 39 дней</div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <h3 style="margin: 0;">ВИКТОР, КОСТАНАЙ</h3>
+                            <span style="background: var(--primary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 12px;">Банкротство ФЛ</span>
                         </div>
-                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333;">▶️ Смотреть видео-отзыв</div>
+                        <p style="font-size: 14px; color: #666; margin-bottom: 12px;">0 продаж по направлению БФЛ. Хотел запустить новое направление в юрфирме.</p>
+                        <p style="font-size: 13px; color: #888; margin-bottom: 12px;"><strong>Что сделали:</strong> полное внедрение системы с нуля — от рекламы до скриптов.</p>
+                        <div class="case-val good" style="font-size: 18px; text-align: center;">3,1 млн за 39 дней</div>
+                        <div style="background: #f0f0f0; height: 140px; border-radius: 8px; display: flex; align-items: center; justify-content: center; cursor: pointer; color:#333; margin-top: 12px;">▶️ Смотреть видео-отзыв</div>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 40px;">
@@ -416,25 +488,26 @@
                 <div class="fade-up">
                     <h2>Кто стоит за системой?</h2>
                     <p style="margin-bottom: 20px;">
-                        Меня зовут Алексей. За 6 лет я потратил более <strong>$50,000 на рекламу</strong> для юридических компаний и других бизнесов в Казахстане.
-                        Я работал с 120+ компаниями. Но юридический бизнес — особенный.
+                        Меня зовут Алексей. Последние 2 года я работаю только с одной нишей — юридические компании. А в digital-маркетинге — уже 7 лет.
+                    </p>
+                    <p style="margin-bottom: 20px;">
+                        Я не передаю ваш проект стажёру. Стратегию строю лично — потому что юридический маркетинг это не «настроить рекламу и забыть». Это понимание вашего продукта, вашей воронки, ваших клиентов.
                     </p>
                     <p style="margin-bottom: 30px;">
-                        Поэтому я создал авторскую систему — специально для юридических компаний. Не шаблон. Не общие советы. 
-                        Конкретная методология из 7 шагов, которую я оттачивал на реальных клиентах.
+                        За это время я реализовал рекламные бюджеты на $50,000+, протестировал сотни маркетинговых связок и построил систему из 7 шагов, которая стабильно даёт результат.
                     </p>
-                    
+
                     <div class="grid" style="grid-template-columns: repeat(3, 1fr); gap: 10px;">
                         <div class="card text-center" style="padding: 15px;">
-                            <h3 class="text-gradient count-up" data-target="6">0</h3>
-                            <small>лет опыта</small>
+                            <h3 class="text-gradient count-up" data-target="2" data-suffix="">2</h3>
+                            <small>года в юр. маркетинге</small>
                         </div>
                         <div class="card text-center" style="padding: 15px;">
-                            <h3 class="text-gradient count-up" data-target="50">0</h3>
+                            <h3 class="text-gradient count-up" data-target="50" data-suffix="+">50+</h3>
                             <small>$ тыс. бюджет</small>
                         </div>
                         <div class="card text-center" style="padding: 15px;">
-                            <h3 class="text-gradient count-up" data-target="15">0</h3>
+                            <h3 class="text-gradient count-up" data-target="15" data-suffix="">15</h3>
                             <small>юр. фирм</small>
                         </div>
                     </div>
@@ -444,33 +517,35 @@
 
         <section class="section section-alt">
             <div class="container">
-                <h2 class="text-center fade-up">Что вы получите на диагностике</h2>
+                <h2 class="text-center fade-up">Что вы получите после диагностики</h2>
+                <p class="text-center text-sec fade-up" style="margin-bottom: 30px;">Через 1-2 часа у вас на руках будет:</p>
                 <div class="card fade-up" style="margin-top: 30px; max-width: 800px; margin-left: auto; margin-right: auto;">
                     <ul style="margin-bottom: 20px;">
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ Аудит текущей воронки продаж</span><span style="text-decoration: line-through; color: #999;">150,000 ₸</span>
+                        <li style="border-bottom: 1px solid #eee; padding: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                            <div><strong>Разбор воронки</strong> — где именно сейчас теряются клиенты и деньги</div>
                         </li>
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ Расчёт юнит-экономики</span><span style="text-decoration: line-through; color: #999;">100,000 ₸</span>
+                        <li style="border-bottom: 1px solid #eee; padding: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                            <div><strong>Финансовая модель</strong> — сколько нужно вложить и сколько получите</div>
                         </li>
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ Стратегия позиционирования</span><span style="text-decoration: line-through; color: #999;">200,000 ₸</span>
+                        <li style="border-bottom: 1px solid #eee; padding: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                            <div><strong>Стратегия</strong> — какой канал запустить первым и почему</div>
                         </li>
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ План каналов привлечения</span><span style="text-decoration: line-through; color: #999;">100,000 ₸</span>
-                        </li>
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ Воронка продаж под ключ</span><span style="text-decoration: line-through; color: #999;">250,000 ₸</span>
-                        </li>
-                        <li style="border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between;">
-                            <span>✓ Пошаговый план на 90 дней</span><span style="text-decoration: line-through; color: #999;">200,000 ₸</span>
+                        <li style="padding: 16px 0; display: flex; align-items: flex-start; gap: 12px;">
+                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                            <div><strong>План на 90 дней</strong> — конкретные шаги с дедлайнами</div>
                         </li>
                     </ul>
-                    
-                    <div style="background: var(--bg-alt); padding: 25px; margin-top: 25px; text-align: center; border-radius: 8px;">
-                        <div style="color: var(--text-sec);">Общая ценность: <span style="text-decoration: line-through;">1,250,000 ₸</span></div>
-                        <div style="font-size: 40px; font-weight: 800; color: var(--primary); margin: 10px 0;">15,000 ₸</div>
-                        <small>(это 1.2% от реальной ценности)</small>
+
+                    <div style="background: #FFF7ED; padding: 16px; border-radius: 8px; border: 1px solid var(--accent-yellow); margin-bottom: 20px;">
+                        <p style="margin: 0; font-size: 15px;"><strong>Это не общие советы.</strong> Это персональный разбор вашего бизнеса с конкретными цифрами и действиями.</p>
+                    </div>
+
+                    <div style="background: var(--bg-alt); padding: 25px; text-align: center; border-radius: 8px;">
+                        <div style="font-size: 40px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">15,000 ₸</div>
+                        <p style="margin: 0; color: var(--text-sec);">Гарантия возврата 100% — если не понравится</p>
                     </div>
                 </div>
             </div>
@@ -566,10 +641,35 @@
                     <div class="text-center">
                         <div style="font-size: 48px; font-weight: 800; color: white;">15,000 ₸</div>
                         <div style="color: #ccc; font-size: 14px; margin-bottom: 20px;">(один неудачный таргетолог стоит 200-400K/мес)</div>
-                        <div style="color: var(--accent-yellow); font-weight: 700; margin-bottom: 20px;">⚡ Осталось 3 места на этой неделе.</div>
+                        <div style="color: #ccc; font-size: 14px; margin-bottom: 20px;">Диагностику провожу лично — поэтому беру ограниченное количество разборов в месяц.</div>
                         <button onclick="openModal()" class="btn btn-pulse" style="width: 100%;">ЗАПИСАТЬСЯ НА ДИАГНОСТИКУ →</button>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <h2 class="text-center fade-up">Наша метрика — деньги, а не заявки</h2>
+                <p class="text-center text-sec fade-up" style="max-width: 700px; margin: 0 auto 40px;">Любое агентство может нагнать вам 100 заявок. Но если ни одна не дойдёт до договора — это не маркетинг, это слив бюджета.</p>
+
+                <div class="grid metrics-grid fade-up" style="grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; max-width: 900px; margin: 0 auto;">
+                    <div class="card text-center" style="background: #f8f8f8; border: 1px solid #e0e0e0;">
+                        <div style="font-size: 48px; font-weight: 800; color: #999;">100</div>
+                        <p style="margin: 10px 0 0; color: #666;">заявок от универсалов</p>
+                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-red); margin-top: 10px;">= 0 ₸</div>
+                        <p style="color: #888; font-size: 13px;">на счёте</p>
+                    </div>
+                    <div class="metrics-vs" style="font-size: 32px; font-weight: 800; color: var(--primary);">VS</div>
+                    <div class="card text-center" style="background: linear-gradient(135deg, rgba(74,0,224,0.05), rgba(107,47,245,0.1)); border: 2px solid var(--primary);">
+                        <div style="font-size: 48px; font-weight: 800; color: var(--primary);">30</div>
+                        <p style="margin: 10px 0 0; color: #666;">квалифицированных лидов от нас</p>
+                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-green); margin-top: 10px;">= 3-5 млн ₸</div>
+                        <p style="color: #888; font-size: 13px;">выручки</p>
+                    </div>
+                </div>
+
+                <p class="text-center fade-up" style="margin-top: 30px; font-style: italic; color: var(--text-sec);">Мы отвечаем за весь путь: от клика по рекламе до подписанного договора.</p>
             </div>
         </section>
 
@@ -672,7 +772,10 @@
     </footer>
 
     <div class="sticky-cta" id="sticky-cta">
-        <button onclick="openModal()" class="btn" style="padding: 12px; width: 100%;">Записаться — 15,000 ₸</button>
+        <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+            <span class="sticky-cta-text" style="font-size: 14px; color: var(--text-main); font-weight: 500;">Диагностика — 15 000 ₸ <span style="color: var(--accent-green);">(гарантия возврата 100%)</span></span>
+            <button onclick="openModal()" class="btn" style="padding: 12px 24px; width: auto; white-space: nowrap;">Записаться</button>
+        </div>
     </div>
 
     <!-- Quiz Modal -->
@@ -734,18 +837,44 @@
         let modalAnswers = {};
 
         // 1. Scroll Progress & Sticky CTA
+        let formVisible = false;
+        let heroVisible = true;
+
+        // Intersection Observer for form section
+        const formSection = document.getElementById('form-section');
+        const heroSection = document.querySelector('.hero');
+        const stickyCta = document.getElementById('sticky-cta');
+
+        const formObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                formVisible = entry.isIntersecting;
+                updateStickyCta();
+            });
+        }, { threshold: 0.1 });
+
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                heroVisible = entry.isIntersecting;
+                updateStickyCta();
+            });
+        }, { threshold: 0.5 });
+
+        if (formSection) formObserver.observe(formSection);
+        if (heroSection) heroObserver.observe(heroSection);
+
+        function updateStickyCta() {
+            if (!heroVisible && !formVisible) {
+                stickyCta.classList.add('active');
+            } else {
+                stickyCta.classList.remove('active');
+            }
+        }
+
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
             document.getElementById("scroll-progress").style.width = scrolled + "%";
-
-            const cta = document.getElementById("sticky-cta");
-            if (scrolled > 15 && scrolled < 85) {
-                cta.classList.add("active");
-            } else {
-                cta.classList.remove("active");
-            }
         };
 
         // Modal Functions
