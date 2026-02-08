@@ -144,27 +144,67 @@
         .sticky-cta.active { transform: translateY(0); }
 
         /* --- MODAL --- */
-        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(5px); }
         .modal-overlay.active { display: flex; }
         .modal-content { background: white; border-radius: 20px; max-width: 550px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: modalIn 0.3s ease-out; }
         @keyframes modalIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
-        .modal-close { position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; border: none; background: #f3f4f6; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
+        .modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border: none; background: #f3f4f6; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
         .modal-close:hover { background: #e5e7eb; }
-        .modal-body { padding: 40px 30px; }
+        .modal-body { padding: 30px 20px; }
 
-        /* --- DESKTOP ADAPTATION --- */
+        /* --- HERO MOBILE-FIRST --- */
+        .hero { min-height: 100vh; min-height: 100dvh; padding: 80px 0 40px; }
+        .hero-inner { display: flex; flex-direction: column; gap: 32px; }
+        .hero-content { order: 1; }
+        .hero-img-wrapper {
+            order: 2;
+            width: 200px; height: 200px;
+            margin: 20px auto 0;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--primary);
+            box-shadow: 0 0 40px rgba(74,0,224,0.4);
+        }
+        .hero-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.5); transform-origin: 50% 25%; }
+        .hero h1 { font-size: 28px; line-height: 1.2; }
+        .hero .bullets { margin: 20px 0; font-size: 15px; }
+        .hero .bullets li { margin-bottom: 10px; }
+        .hero .badges { gap: 8px; margin-bottom: 24px; }
+        .hero .badge { padding: 6px 12px; font-size: 12px; }
+
+        /* --- FOOTER MOBILE --- */
+        .footer-grid { display: flex; flex-direction: column; gap: 32px; }
+        .footer-col { }
+        .footer-divider { height: 1px; background: #333; margin: 8px 0; }
+
+        /* --- DESKTOP --- */
         @media (min-width: 768px) {
-            h1 { font-size: 56px; } h2 { font-size: 40px; } h3 { font-size: 24px; }
+            h1 { font-size: 44px; }
+            h2 { font-size: 40px; }
+            h3 { font-size: 24px; }
             .btn { width: auto; font-size: 18px; padding: 20px 40px; }
+            .modal-body { padding: 40px 30px; }
+
+            .hero { padding: 100px 0 60px; }
             .hero-inner { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: center; }
-            .hero-img-wrapper { order: 2; margin: 0; width: 420px; height: 420px; border-radius: 50%; overflow: hidden; border: 4px solid var(--primary); box-shadow: 0 0 60px rgba(74,0,224,0.4); }
-            .hero-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.5); transform-origin: 50% 25%; }
+            .hero-content { order: 1; }
+            .hero-img-wrapper { order: 2; margin: 0; width: 420px; height: 420px; border-width: 4px; }
+            .hero h1 { font-size: 44px; }
+            .hero .bullets { font-size: 17px; margin: 24px 0; }
+            .hero .badges { gap: 10px; margin-bottom: 30px; }
+            .hero .badge { padding: 8px 16px; font-size: 14px; }
+
             .bento-grid { grid-template-columns: 1fr 1fr; }
             .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
             .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
             .author-grid { display: grid; grid-template-columns: 350px 1fr; gap: 60px; align-items: center; }
             .disq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
             .sticky-cta { display: none; }
+
+            .footer-grid { flex-direction: row; gap: 40px; }
+            .footer-col { flex: 1; }
+            .footer-col:first-child { max-width: 280px; }
+            .footer-divider { display: none; }
         }
     </style>
 </head>
@@ -179,39 +219,40 @@
     </header>
 
     <main>
-        <section class="hero" style="background: linear-gradient(135deg, #0F0A1E 0%, #1A0B3E 100%); min-height: 100vh; display: flex; align-items: center; padding-top: 100px;">
+        <section class="hero" style="background: linear-gradient(135deg, #0F0A1E 0%, #1A0B3E 100%); display: flex; align-items: center;">
             <div class="container hero-inner">
-                <div class="hero-img-wrapper fade-up">
-                    <img src="ava.png" alt="Алексей Trust Traffic" class="hero-img">
-                </div>
-                
                 <div class="hero-content fade-up">
-                    <h1 class="text-white" style="font-size: 44px; line-height: 1.15;">Как владельцу юридической компании выйти на стабильные <span class="text-gradient">10-30 млн ₸/мес</span></h1>
-                    <ul style="margin: 24px 0; color: #D1D5DB; font-size: 17px; list-style: none; padding: 0;">
-                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
-                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                    <h1 class="text-white">Как владельцу юридической компании выйти на стабильные <span class="text-gradient">10-30 млн ₸/мес</span></h1>
+
+                    <ul class="bullets" style="color: #D1D5DB; list-style: none; padding: 0;">
+                        <li style="display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
                             <span>Авторская система «Юрист на Миллион» — <strong style="color: white;">15 компаний</strong> уже используют</span>
                         </li>
-                        <li style="display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px;">
-                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                        <li style="display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
                             <span>Средний рост выручки — <strong style="color: white;">х3 за 90 дней</strong></span>
                         </li>
-                        <li style="display: flex; align-items: flex-start; gap: 12px;">
-                            <span style="color: var(--accent-green); font-size: 20px;">✓</span>
+                        <li style="display: flex; align-items: flex-start; gap: 10px;">
+                            <span style="color: var(--accent-green); font-size: 18px; flex-shrink: 0;">✓</span>
                             <span>Работает только если у вас <strong style="color: white;">от 2 юристов</strong> в команде</span>
                         </li>
                     </ul>
-                    
-                    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
+
+                    <div class="badges" style="display: flex; flex-wrap: wrap;">
                         <div class="badge">🏆 15 компаний</div>
                         <div class="badge">📈 ROI 300-1000%</div>
                         <div class="badge">🛡️ Гарантия возврата</div>
                     </div>
-                    
-                    <p style="font-size: 14px; color: var(--accent-yellow); margin-bottom: 20px;">⚠️ Если вы работаете один или ищете «бесплатных клиентов» — эта страница НЕ для вас.</p>
-                    
+
+                    <p style="font-size: 13px; color: var(--accent-yellow); margin-bottom: 20px;">⚠️ Если вы работаете один или ищете «бесплатных клиентов» — эта страница НЕ для вас.</p>
+
                     <button onclick="openModal()" class="btn btn-pulse">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
-                    <p style="font-size: 12px; color: #9CA3AF; margin-top: 10px;">Стоимость диагностики — 15 000 ₸ | Гарантия возврата 100%</p>
+                    <p style="font-size: 11px; color: #9CA3AF; margin-top: 10px; text-align: center;">Стоимость диагностики — 15 000 ₸ | Гарантия возврата 100%</p>
+                </div>
+
+                <div class="hero-img-wrapper fade-up">
+                    <img src="ava.png" alt="Алексей Trust Traffic" class="hero-img">
                 </div>
             </div>
         </section>
@@ -582,40 +623,46 @@
         </section>
     </main>
 
-    <footer style="background: #0a0a0a; color: #888; padding: 50px 0; font-size: 14px; line-height: 1.7;">
+    <footer style="background: #0a0a0a; color: #888; padding: 40px 0 30px; font-size: 14px; line-height: 1.7;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
-                <!-- Desktop: 3 columns -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
-                    <!-- Column 1: Logo & Info -->
-                    <div>
-                        <div style="font-weight: 800; color: white; font-size: 22px; margin-bottom: 20px;">Trust Traffic</div>
-                        <p style="margin-bottom: 15px;">Маркетинговое агентство для юридических компаний. Работаем только офлайн в Алматы.</p>
-                        <p style="margin-bottom: 15px;">©2019-2025 Все права защищены</p>
-                        <a href="privacy.html" style="color: #888; text-decoration: underline;">Политика конфиденциальности</a>
-                    </div>
-
-                    <!-- Column 2: Address -->
-                    <div>
-                        <div style="font-weight: 700; color: white; font-size: 16px; margin-bottom: 15px;">Адрес</div>
-                        <p style="font-weight: 600; color: white; margin-bottom: 10px;">ТОО «TrustTraffic»</p>
-                        <p style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px;">
-                            <span style="color: #ef4444;">📍</span>
-                            <span>г. Алматы, улица Мынбаева, 53</span>
-                        </p>
-                        <p style="margin-top: 15px; font-weight: 600; color: white;">БИН 221240002823</p>
-                    </div>
-
-                    <!-- Column 3: Phone -->
-                    <div>
-                        <a href="tel:+77058184467" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: 600; margin-bottom: 10px;">
-                            <span style="color: #888;">📞</span>
-                            +7 705 818 44 67
-                        </a>
-                        <p style="margin-bottom: 20px;">Звоните с 10 до 20 пн-вс</p>
-                        <p style="font-size: 12px; color: #666; line-height: 1.5;">Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой. Отправляя сведения через любую электронную форму на этом сайте, вы даете согласие на обработку ваших персональных данных.</p>
-                    </div>
+            <div class="footer-grid">
+                <!-- Column 1: Logo & Info -->
+                <div class="footer-col">
+                    <div style="font-weight: 700; color: white; font-size: 20px; margin-bottom: 4px;">Trust-Traffic</div>
+                    <p style="font-style: italic; color: #666; margin-bottom: 16px;">Клиентов много...Бывает.</p>
+                    <p style="margin-bottom: 4px;">© Trust-Traffic</p>
+                    <p style="margin-bottom: 16px;">2019-2025 Все права защищены.</p>
+                    <a href="privacy.html" style="color: #888; text-decoration: underline;">Политика конфиденциальности</a>
                 </div>
+
+                <div class="footer-divider"></div>
+
+                <!-- Column 2: Address -->
+                <div class="footer-col">
+                    <p style="font-weight: 600; color: white; font-size: 16px; margin-bottom: 16px;">Рекламное агентство Trust Traffic</p>
+                    <p style="margin-bottom: 4px;"><strong style="color: #ccc;">Республика Казахстан:</strong></p>
+                    <p style="margin-bottom: 4px;">г. Алматы, ул. Мынбаева, 53,</p>
+                    <p style="margin-bottom: 12px;">коворкинг-центр Авеню, 2 этаж</p>
+                    <p style="margin-bottom: 4px;">ТОО TrustTraffic</p>
+                    <p><strong style="color: white;">БИН 221240002823</strong></p>
+                </div>
+
+                <div class="footer-divider"></div>
+
+                <!-- Column 3: Phone -->
+                <div class="footer-col">
+                    <a href="tel:+77058184467" style="display: inline-flex; align-items: center; gap: 8px; color: white; font-size: 18px; font-weight: 500; margin-bottom: 6px; text-decoration: underline;">
+                        <span style="font-size: 16px;">📞</span>
+                        +7 705 818 44 67
+                    </a>
+                    <p style="margin-bottom: 16px;">С 10:00 до 20:00</p>
+                    <p style="font-size: 12px; color: #555; line-height: 1.5;">Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой. Отправляя сведения через любую электронную форму на этом сайте, вы даете согласие на обработку ваших персональных данных.</p>
+                </div>
+            </div>
+
+            <!-- Bottom line -->
+            <div style="border-top: 1px solid #222; margin-top: 30px; padding-top: 20px; text-align: center; color: #555; font-size: 12px;">
+                Сделано с 💜 в Алматы
             </div>
         </div>
     </footer>
