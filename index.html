@@ -253,24 +253,24 @@
             .btn { width: auto; font-size: 18px; padding: 20px 40px; }
             .modal-body { padding: 40px 30px; }
 
-            .hero { padding: 120px 0 80px; min-height: 90vh; }
-            .hero-inner { display: flex; flex-direction: column; align-items: center; max-width: 900px; margin: 0 auto; }
+            .hero { padding: 100px 0 60px; min-height: auto; }
+            .hero-inner { display: flex; flex-direction: column; align-items: center; max-width: 800px; margin: 0 auto; }
             .hero-content { order: 1; width: 100%; }
             .hero-photo-block { display: none; }
-            .hero h1 { font-size: 52px; }
-            .hero .bullets { font-size: 18px; margin: 32px auto; max-width: 700px; }
+            .hero h1 { font-size: 36px; }
+            .hero .bullets { font-size: 16px; margin: 24px auto; }
             .hero .badges { gap: 10px; margin-bottom: 30px; }
             .hero .badge { padding: 8px 16px; font-size: 14px; }
 
             /* --- HERO DESKTOP CENTERED --- */
-            .hero-positioning { max-width: 700px; margin: 0 auto 24px; }
-            .hero-headline { text-align: center; font-size: 52px; line-height: 1.15; max-width: 900px; margin: 0 auto; }
-            .hero-subtitle { text-align: center; font-size: 20px !important; max-width: 650px; margin: 20px auto 0; }
-            .hero-warning { text-align: center; margin-top: 24px; }
-            .hero-cta-block { max-width: 500px; margin: 40px auto; }
-            .hero-cta-block p { font-size: 16px !important; font-weight: 400; color: #D1D5DB !important; background: none; padding: 0; border-radius: 0; border: none; text-align: center; }
-            .hero-bullets { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 40px; }
-            .hero-bullets li { margin-bottom: 0; }
+            .hero-positioning { max-width: 650px; margin: 0 auto 20px; }
+            .hero-headline { text-align: center; font-size: 36px; line-height: 1.25; max-width: 750px; margin: 0 auto; }
+            .hero-subtitle { text-align: center; font-size: 18px !important; max-width: 550px; margin: 16px auto 0; display: block; }
+            .hero-cta-block { max-width: 450px; margin: 24px auto 20px; }
+            .hero-cta-block p { font-size: 15px !important; font-weight: 400; color: #D1D5DB !important; background: none; padding: 0; border-radius: 0; border: none; text-align: center; }
+            .hero-bullets { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 600px; margin: 20px auto; }
+            .hero-bullets li { margin-bottom: 0; text-align: left; }
+            .hero-warning { text-align: center; margin-top: 20px; background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.4); padding: 12px 24px; border-radius: 8px; display: inline-block; }
 
             .bento-grid { grid-template-columns: 1fr 1fr; }
             .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -335,7 +335,9 @@
                         </li>
                     </ul>
 
-                    <p class="hero-warning" style="font-size: 14px; color: var(--accent-yellow); font-weight: 600;">⚠️ Только для предпринимателей из юридического бизнеса</p>
+                    <div style="text-align: center;">
+                        <p class="hero-warning" style="font-size: 14px; color: var(--accent-yellow); font-weight: 600;">⚠️ Только для предпринимателей из юридического бизнеса</p>
+                    </div>
                 </div>
 
                 <div class="hero-photo-block fade-up">
