@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Спасибо за заявку | Trust Traffic</title>
+    <meta name="description" content="Ваша заявка успешно отправлена. Мы свяжемся с вами в ближайшее время.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#4A00E0',
+                            light: '#6B2FF5',
+                            dark: '#3500A8',
+                            green: '#10B981',
+                            bg: '#0F0A1E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0F0A1E 0%, #1A0B3E 100%);
+            min-height: 100vh;
+        }
+
+        @keyframes checkmark {
+            0% { transform: scale(0) rotate(45deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+            100% { transform: scale(1) rotate(45deg); opacity: 1; }
+        }
+
+        @keyframes circle {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .checkmark-circle {
+            animation: circle 0.6s ease-in-out;
+        }
+
+        .checkmark {
+            animation: checkmark 0.6s 0.3s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; opacity: 0; }
+        .delay-2 { animation-delay: 0.4s; opacity: 0; }
+        .delay-3 { animation-delay: 0.6s; opacity: 0; }
+        .delay-4 { animation-delay: 0.8s; opacity: 0; }
+
+        .glow {
+            box-shadow: 0 0 40px rgba(74, 0, 224, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <div class="max-w-2xl w-full">
+        <!-- Success Icon -->
+        <div class="text-center mb-8">
+            <div class="inline-block relative">
+                <div class="checkmark-circle w-32 h-32 bg-brand-primary/20 rounded-full flex items-center justify-center mx-auto mb-6 relative glow">
+                    <div class="w-28 h-28 bg-brand-green rounded-full flex items-center justify-center">
+                        <svg class="checkmark w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                </div>
+                <!-- Floating particles -->
+                <div class="absolute top-0 left-0 w-3 h-3 bg-brand-primary rounded-full float-animation" style="animation-delay: 0s;"></div>
+                <div class="absolute top-4 right-8 w-2 h-2 bg-brand-light rounded-full float-animation" style="animation-delay: 0.5s;"></div>
+                <div class="absolute bottom-8 left-12 w-2.5 h-2.5 bg-yellow-400 rounded-full float-animation" style="animation-delay: 1s;"></div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 fade-in-up">
+                Заявка успешно отправлена!
+            </h1>
+
+            <p class="text-lg text-gray-600 mb-8 fade-in-up delay-1">
+                Спасибо за обращение в <span class="font-bold text-brand-primary">Trust Traffic</span>.
+                Наш специалист свяжется с вами в течение <span class="font-bold text-brand-green">15 минут</span>.
+            </p>
+
+            <!-- Info Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-1 gap-4 mb-10 fade-in-up delay-2 max-w-md mx-auto">
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border-2 border-purple-200">
+                    <div class="text-brand-primary text-3xl mb-2">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p class="text-sm font-semibold text-gray-700">Ответим через</p>
+                    <p class="text-2xl font-bold text-gray-900">15 минут</p>
+                </div>
+            </div>
+
+            <!-- WhatsApp Button -->
+            <div class="fade-in-up delay-3 mb-8">
+                <a href="https://wa.me/77058184467?text=Здравствуйте!%20Я%20оставил%20заявку%20на%20сайте%20Trust%20Traffic"
+                   target="_blank"
+                   class="inline-flex items-center justify-center gap-3 bg-[#25D366] text-white text-lg font-bold py-5 px-10 rounded-2xl hover:bg-[#20BD5A] transition-all duration-300 shadow-2xl hover:shadow-green-500/50 hover:-translate-y-1 group w-full md:w-auto">
+                    <i class="fab fa-whatsapp text-3xl group-hover:scale-110 transition-transform"></i>
+                    <span>Написать в WhatsApp прямо сейчас</span>
+                </a>
+                <p class="text-sm text-gray-500 mt-3">Не хотите ждать? Свяжитесь с нами напрямую!</p>
+            </div>
+
+            <!-- Divider -->
+            <div class="relative my-8 fade-in-up delay-4">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 bg-white text-gray-500">или</span>
+                </div>
+            </div>
+
+            <!-- Additional Actions -->
+            <div class="space-y-4 fade-in-up delay-4">
+                <a href="tel:+77058184467"
+                   class="inline-flex items-center justify-center gap-2 w-full border-2 border-brand-primary text-brand-primary font-bold py-4 px-6 rounded-xl hover:bg-brand-primary hover:text-white transition-all duration-300 hover:-translate-y-0.5">
+                    <i class="fas fa-phone-alt"></i>
+                    Позвонить: +7 705 818 44 67
+                </a>
+
+                <a href="index.html"
+                   class="inline-flex items-center justify-center gap-2 w-full border-2 border-gray-300 text-gray-700 font-bold py-4 px-6 rounded-xl hover:bg-gray-100 transition-all duration-300">
+                    <i class="fas fa-arrow-left"></i>
+                    Вернуться на главную
+                </a>
+            </div>
+
+            <!-- Trust Badge -->
+            <div class="mt-10 pt-8 border-t border-gray-200 fade-in-up delay-4">
+                <p class="text-xs text-gray-500 mb-4">Нам доверяют</p>
+                <div class="flex flex-wrap justify-center gap-6 text-sm font-semibold">
+                    <span class="flex items-center gap-2 text-gray-600">
+                        <i class="fas fa-building text-brand-primary"></i> 15+ юр. компаний
+                    </span>
+                    <span class="flex items-center gap-2 text-gray-600">
+                        <i class="fas fa-chart-line text-brand-green"></i> ROI 300-1000%
+                    </span>
+                    <span class="flex items-center gap-2 text-gray-600">
+                        <i class="fas fa-shield-alt text-yellow-500"></i> Гарантия возврата
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo Footer -->
+        <div class="text-center mt-8">
+            <div class="text-2xl font-extrabold text-white tracking-tight">
+                TRUST TRAFFIC
+            </div>
+            <p class="text-sm text-gray-400 mt-2">Маркетинг для юридических компаний</p>
+        </div>
+    </div>
+
+    <script>
+        console.log('Thank you page loaded');
+        window.scrollTo(0, 0);
+    </script>
+
+</body>
+</html>

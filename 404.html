@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Страница не найдена | Trust Traffic</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную страницу Trust Traffic.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            primary: '#4A00E0',
+                            light: '#6B2FF5',
+                            dark: '#3500A8',
+                            green: '#10B981',
+                            bg: '#0F0A1E'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+
+        .error-number {
+            font-size: clamp(80px, 20vw, 200px);
+            font-weight: 800;
+            background: linear-gradient(135deg, #4A00E0 0%, #6B2FF5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 30px rgba(74, 0, 224, 0.3);
+        }
+
+        .pulse-glow {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen flex items-center justify-center font-sans">
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <!-- Animated Icon -->
+            <div class="float-animation mb-8">
+                <div class="inline-block bg-brand-primary/10 p-8 rounded-full">
+                    <i class="fas fa-chart-line text-brand-primary text-6xl"></i>
+                </div>
+            </div>
+
+            <!-- 404 Number -->
+            <div class="error-number mb-6 fade-in" style="animation-delay: 0.1s;">
+                404
+            </div>
+
+            <!-- Heading -->
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 fade-in" style="animation-delay: 0.2s;">
+                Страница не найдена
+            </h1>
+
+            <!-- Description -->
+            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in" style="animation-delay: 0.3s;">
+                К сожалению, запрашиваемая страница не существует или была перемещена. Возможно, вы перешли по устаревшей ссылке или ошиблись в адресе.
+            </p>
+
+            <!-- Marketing themed joke -->
+            <div class="bg-white p-6 rounded-2xl shadow-lg mb-12 max-w-2xl mx-auto fade-in" style="animation-delay: 0.4s;">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0 w-12 h-12 bg-brand-primary/10 rounded-full flex items-center justify-center">
+                        <i class="fas fa-lightbulb text-brand-primary text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <h3 class="font-semibold text-gray-900 mb-2">
+                            <i class="fas fa-quote-left text-brand-primary/30 text-sm mr-2"></i>
+                            Маркетинговый факт
+                        </h3>
+                        <p class="text-gray-600 italic">
+                            Даже лучшие воронки иногда теряют лидов... но эта страница точно потерялась!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center fade-in" style="animation-delay: 0.5s;">
+                <a href="/" class="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <i class="fas fa-home"></i>
+                    <span>Вернуться на главную</span>
+                </a>
+
+                <a href="tel:+77058184467" class="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 font-semibold px-8 py-4 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg border-2 border-gray-200">
+                    <i class="fas fa-phone text-brand-primary"></i>
+                    <span>+7 705 818 44 67</span>
+                </a>
+            </div>
+
+            <!-- Helpful Links -->
+            <div class="mt-16 pt-12 border-t border-gray-200 fade-in" style="animation-delay: 0.6s;">
+                <p class="text-gray-500 mb-6 font-medium">Возможно, вас заинтересует:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+                    <a href="/#form-section" class="group p-6 bg-white rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-primary/20">
+                        <i class="fas fa-rocket text-brand-primary text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Диагностика</h4>
+                        <p class="text-sm text-gray-600">Стратегия роста для вашей компании</p>
+                    </a>
+
+                    <a href="index.html" class="group p-6 bg-white rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-primary/20">
+                        <i class="fas fa-chart-pie text-brand-primary text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">Кейсы</h4>
+                        <p class="text-sm text-gray-600">Результаты 15 юридических компаний</p>
+                    </a>
+
+                    <a href="https://wa.me/77058184467" class="group p-6 bg-white rounded-xl hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-brand-primary/20">
+                        <i class="fab fa-whatsapp text-brand-green text-2xl mb-3 group-hover:scale-110 transition-transform"></i>
+                        <h4 class="font-semibold text-gray-900 mb-2">WhatsApp</h4>
+                        <p class="text-sm text-gray-600">Напишите нам прямо сейчас</p>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Info -->
+            <div class="mt-12 text-sm text-gray-500 fade-in" style="animation-delay: 0.7s;">
+                <p>Ошибка 404 | TRUST TRAFFIC - Маркетинг для юридических компаний</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        console.log('404 page loaded');
+    </script>
+</body>
+</html>
