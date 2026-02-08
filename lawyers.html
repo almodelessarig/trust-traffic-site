@@ -213,11 +213,13 @@
 
         /* --- HERO MOBILE REORDER --- */
         .hero-headline { text-align: center; font-size: 19px; line-height: 1.35; }
-        .hero-subtitle { text-align: center; }
-        .hero-cta-block { margin: 24px 0; }
+        .hero-subtitle { text-align: center; color: #D1D5DB; font-size: 16px; margin: 16px 0; }
+        .hero-cta-block { margin: 24px 0; text-align: center; }
         .hero-cta-block p { font-size: 17px !important; font-weight: 600; color: #fff !important; background: rgba(16, 185, 129, 0.15); padding: 12px 16px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.3); }
         .hero-bullets { margin-top: 24px; }
-        .hero-warning { margin-top: 16px; text-align: center; }
+        .hero-bullets li { text-align: left; }
+        .hero-warning { margin-top: 16px; text-align: center; font-size: 14px; color: var(--accent-yellow); font-weight: 600; }
+        .hero-warning-wrap { text-align: center; }
         .hero-photo-block { order: 2; text-align: center; }
         .hero-caption { color: #9CA3AF; font-size: 12px; text-align: center; margin-top: 12px; line-height: 1.4; max-width: 220px; margin-left: auto; margin-right: auto; }
         .hero-img-mobile { display: block; }
@@ -263,14 +265,16 @@
             .hero .badge { padding: 8px 16px; font-size: 14px; }
 
             /* --- HERO DESKTOP CENTERED --- */
-            .hero-positioning { max-width: 650px; margin: 0 auto 20px; }
+            .hero-content { text-align: center; }
+            .hero-positioning { max-width: 700px; margin: 0 auto 24px; }
             .hero-headline { text-align: center; font-size: 36px; line-height: 1.25; max-width: 750px; margin: 0 auto; }
-            .hero-subtitle { text-align: center; font-size: 18px !important; max-width: 550px; margin: 16px auto 0; display: block; }
-            .hero-cta-block { max-width: 450px; margin: 24px auto 20px; }
-            .hero-cta-block p { font-size: 15px !important; font-weight: 400; color: #D1D5DB !important; background: none; padding: 0; border-radius: 0; border: none; text-align: center; }
-            .hero-bullets { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; max-width: 600px; margin: 20px auto; }
-            .hero-bullets li { margin-bottom: 0; text-align: left; }
-            .hero-warning { text-align: center; margin-top: 20px; background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.4); padding: 12px 24px; border-radius: 8px; display: inline-block; }
+            .hero-subtitle { text-align: center !important; font-size: 18px !important; color: #D1D5DB !important; max-width: 100%; width: 100%; margin: 20px auto !important; display: block; background: none !important; padding: 0 !important; border: none !important; }
+            .hero-cta-block { max-width: 500px; margin: 28px auto 24px; text-align: center; }
+            .hero-cta-block p { font-size: 15px !important; font-weight: 400; color: #D1D5DB !important; background: none !important; padding: 0 !important; border-radius: 0 !important; border: none !important; text-align: center; }
+            .hero-bullets { display: flex; flex-direction: column; align-items: center; gap: 12px; max-width: 650px; margin: 24px auto; }
+            .hero-bullets li { margin-bottom: 0; text-align: left; justify-content: flex-start; }
+            .hero-warning-wrap { text-align: center; margin-top: 24px; }
+            .hero-warning { background: rgba(251, 191, 36, 0.15); border: 1px solid rgba(251, 191, 36, 0.4); padding: 12px 24px; border-radius: 8px; display: inline-block; }
 
             .bento-grid { grid-template-columns: 1fr 1fr; }
             .cases-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -313,7 +317,7 @@
 
                     <h1 class="text-white hero-headline">Построим управляемый поток платежеспособных клиентов на юридические услуги с увеличением выручки <span class="text-gradient">x2-x10 за 30-60 дней</span> с гарантией результата под ключ</h1>
 
-                    <p class="hero-subtitle" style="color: #D1D5DB; font-size: 17px; margin: 16px 0 12px;">По авторской технологии системных продаж юридических услуг «Юрист на Миллион»</p>
+                    <p class="hero-subtitle">По авторской технологии системных продаж юридических услуг «Юрист на Миллион»</p>
 
                     <div class="hero-cta-block">
                         <p style="font-size: 15px; color: #D1D5DB; margin-bottom: 16px; text-align: center;">Оставьте заявку на консультацию по привлечению клиентов на юридические услуги прямо сейчас</p>
@@ -335,8 +339,8 @@
                         </li>
                     </ul>
 
-                    <div style="text-align: center;">
-                        <p class="hero-warning" style="font-size: 14px; color: var(--accent-yellow); font-weight: 600;">⚠️ Только для предпринимателей из юридического бизнеса</p>
+                    <div class="hero-warning-wrap">
+                        <p class="hero-warning">⚠️ Только для предпринимателей из юридического бизнеса</p>
                     </div>
                 </div>
 
