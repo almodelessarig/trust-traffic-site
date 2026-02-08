@@ -143,6 +143,15 @@
         .sticky-cta { position: fixed; bottom: 0; left: 0; width: 100%; background: rgba(255,255,255,0.95); padding: 15px; z-index: 900; transform: translateY(100%); transition: 0.3s; box-shadow: 0 -5px 20px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
         .sticky-cta.active { transform: translateY(0); }
 
+        /* --- MODAL --- */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(5px); }
+        .modal-overlay.active { display: flex; }
+        .modal-content { background: white; border-radius: 20px; max-width: 550px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: modalIn 0.3s ease-out; }
+        @keyframes modalIn { from { opacity: 0; transform: scale(0.9) translateY(20px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+        .modal-close { position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; border: none; background: #f3f4f6; border-radius: 50%; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; transition: 0.2s; z-index: 10; }
+        .modal-close:hover { background: #e5e7eb; }
+        .modal-body { padding: 40px 30px; }
+
         /* --- DESKTOP ADAPTATION --- */
         @media (min-width: 768px) {
             h1 { font-size: 56px; } h2 { font-size: 40px; } h3 { font-size: 24px; }
@@ -165,7 +174,7 @@
 
     <header style="position: absolute; top: 0; left: 0; width: 100%; padding: 20px; z-index: 10;">
         <div class="container">
-            <img src="logo_trust_traffic.svg" alt="Trust Traffic" style="height: 40px;">
+            <div style="font-weight: 800; color: white; font-size: 24px; letter-spacing: -0.5px;">Trust Traffic</div>
         </div>
     </header>
 
@@ -201,7 +210,7 @@
                     
                     <p style="font-size: 14px; color: var(--accent-yellow); margin-bottom: 20px;">⚠️ Если вы работаете один или ищете «бесплатных клиентов» — эта страница НЕ для вас.</p>
                     
-                    <a href="#form-section" class="btn btn-pulse">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</a>
+                    <button onclick="openModal()" class="btn btn-pulse">ПОЛУЧИТЬ СТРАТЕГИЮ РОСТА →</button>
                     <p style="font-size: 12px; color: #9CA3AF; margin-top: 10px;">Стоимость диагностики — 15 000 ₸ | Гарантия возврата 100%</p>
                 </div>
             </div>
@@ -351,7 +360,7 @@
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 40px;">
-                    <a href="#form-section" class="btn btn-pulse">ХОЧУ ТАКИЕ ЖЕ РЕЗУЛЬТАТЫ →</a>
+                    <button onclick="openModal()" class="btn btn-pulse">ХОЧУ ТАКИЕ ЖЕ РЕЗУЛЬТАТЫ →</button>
                 </div>
             </div>
         </section>
@@ -513,7 +522,7 @@
                         <div style="font-size: 48px; font-weight: 800; color: white;">15,000 ₸</div>
                         <div style="color: #ccc; font-size: 14px; margin-bottom: 20px;">(один неудачный таргетолог стоит 200-400K/мес)</div>
                         <div style="color: var(--accent-yellow); font-weight: 700; margin-bottom: 20px;">⚡ Осталось 3 места на этой неделе.</div>
-                        <a href="#form-section" class="btn btn-pulse" style="width: 100%;">ЗАПИСАТЬСЯ НА ДИАГНОСТИКУ →</a>
+                        <button onclick="openModal()" class="btn btn-pulse" style="width: 100%;">ЗАПИСАТЬСЯ НА ДИАГНОСТИКУ →</button>
                     </div>
                 </div>
             </div>
@@ -573,47 +582,181 @@
         </section>
     </main>
 
-    <footer style="background: #000; color: #666; padding: 40px 0; font-size: 14px;">
+    <footer style="background: #0a0a0a; color: #888; padding: 50px 0; font-size: 14px; line-height: 1.7;">
         <div class="container">
-            <div class="grid" style="gap: 10px;">
-                <p style="color:white; font-weight: 700; font-size: 18px;">TRUST TRAFFIC</p>
-                <p>ТОО TrustTraffic, БИН 221240002823</p>
-                <p>г. Алматы, ул. Мынбаева, 53</p>
-                <p>📞 +7 705 818 44 67</p>
-                <div style="margin-top: 10px;"><a href="privacy.html" style="text-decoration: underline;">Политика конфиденциальности</a></div>
-                <p>© Trust-Traffic 2019-2025. Все права защищены.</p>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 40px;">
+                <!-- Desktop: 3 columns -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+                    <!-- Column 1: Logo & Info -->
+                    <div>
+                        <div style="font-weight: 800; color: white; font-size: 22px; margin-bottom: 20px;">Trust Traffic</div>
+                        <p style="margin-bottom: 15px;">Маркетинговое агентство для юридических компаний. Работаем только офлайн в Алматы.</p>
+                        <p style="margin-bottom: 15px;">©2019-2025 Все права защищены</p>
+                        <a href="privacy.html" style="color: #888; text-decoration: underline;">Политика конфиденциальности</a>
+                    </div>
+
+                    <!-- Column 2: Address -->
+                    <div>
+                        <div style="font-weight: 700; color: white; font-size: 16px; margin-bottom: 15px;">Адрес</div>
+                        <p style="font-weight: 600; color: white; margin-bottom: 10px;">ТОО «TrustTraffic»</p>
+                        <p style="display: flex; align-items: flex-start; gap: 8px; margin-bottom: 10px;">
+                            <span style="color: #ef4444;">📍</span>
+                            <span>г. Алматы, улица Мынбаева, 53</span>
+                        </p>
+                        <p style="margin-top: 15px; font-weight: 600; color: white;">БИН 221240002823</p>
+                    </div>
+
+                    <!-- Column 3: Phone -->
+                    <div>
+                        <a href="tel:+77058184467" style="display: flex; align-items: center; gap: 10px; color: white; font-size: 20px; font-weight: 600; margin-bottom: 10px;">
+                            <span style="color: #888;">📞</span>
+                            +7 705 818 44 67
+                        </a>
+                        <p style="margin-bottom: 20px;">Звоните с 10 до 20 пн-вс</p>
+                        <p style="font-size: 12px; color: #666; line-height: 1.5;">Любая информация, представленная на данном сайте, носит исключительно информационный характер и ни при каких условиях не является публичной офертой. Отправляя сведения через любую электронную форму на этом сайте, вы даете согласие на обработку ваших персональных данных.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <div class="sticky-cta" id="sticky-cta">
-        <a href="#form-section" class="btn" style="padding: 12px; width: 100%;">Записаться — 15,000 ₸</a>
+        <button onclick="openModal()" class="btn" style="padding: 12px; width: 100%;">Записаться — 15,000 ₸</button>
+    </div>
+
+    <!-- Quiz Modal -->
+    <div class="modal-overlay" id="quiz-modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <div class="modal-body">
+                <div style="text-align: center; margin-bottom: 25px;">
+                    <h2 style="font-size: 24px; margin-bottom: 10px;">Заявка на диагностику</h2>
+                    <p style="color: #666; font-size: 14px;">Ответьте на 4 вопроса — это займёт 30 секунд</p>
+                </div>
+
+                <div class="form-progress"><div class="form-bar" id="modal-progress-bar"></div></div>
+
+                <div class="modal-step" id="modal-step-1">
+                    <h3 style="margin-bottom: 15px;">1. Сколько юристов в команде?</h3>
+                    <div class="option-card" onclick="modalNextStep(1, 'solo')">👤 Работаю один</div>
+                    <div class="option-card" onclick="modalNextStep(1, '1')">👥 1 юрист</div>
+                    <div class="option-card" onclick="modalNextStep(1, '2-3')">👥 2-3 юриста</div>
+                    <div class="option-card" onclick="modalNextStep(1, '4+')">🏢 4+ юристов</div>
+                </div>
+
+                <div class="modal-step hidden" id="modal-step-2">
+                    <h3 style="margin-bottom: 15px;">2. Опыт платной рекламы?</h3>
+                    <div class="option-card" onclick="modalNextStep(2, 'none')">Никогда не пробовал</div>
+                    <div class="option-card" onclick="modalNextStep(2, 'bad')">Пробовал, слил бюджет</div>
+                    <div class="option-card" onclick="modalNextStep(2, 'good')">Есть опыт, хочу масштабировать</div>
+                </div>
+
+                <div class="modal-step hidden" id="modal-step-3">
+                    <h3 style="margin-bottom: 15px;">3. Бюджет на маркетинг?</h3>
+                    <div class="option-card" onclick="modalNextStep(3, '0')">Нет бюджета</div>
+                    <div class="option-card" onclick="modalNextStep(3, 'low')">До 300K ₸/мес</div>
+                    <div class="option-card" onclick="modalNextStep(3, 'med')">300K - 1M ₸/мес</div>
+                    <div class="option-card" onclick="modalNextStep(3, 'high')">Более 1M ₸/мес</div>
+                </div>
+
+                <div class="modal-step hidden" id="modal-step-4">
+                    <h3 style="margin-bottom: 15px;">4. Куда отправить стратегию?</h3>
+                    <p style="margin-bottom: 15px; font-size: 14px; color: #666;">Введите номер WhatsApp:</p>
+                    <input type="tel" class="form-input" id="modal-phone" placeholder="+7 (___) ___-__-__">
+                    <button class="btn btn-pulse" style="width:100%" onclick="modalSubmitForm()">ОТПРАВИТЬ ЗАЯВКУ →</button>
+                </div>
+
+                <div class="modal-step hidden" id="modal-step-disq">
+                    <div style="text-align: center; padding: 20px 0;">
+                        <div style="font-size: 48px; margin-bottom: 15px;">😔</div>
+                        <h3 style="color: var(--accent-red); margin-bottom: 15px;">Спасибо за ответы</h3>
+                        <p style="color: #666;">Система генерирует поток, с которым одному человеку без бюджета не справиться. Возвращайтесь, когда будете готовы масштабироваться!</p>
+                        <button onclick="closeModal()" class="btn" style="margin-top: 20px;">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         let answers = {};
-        
+        let modalAnswers = {};
+
         // 1. Scroll Progress & Sticky CTA
         window.onscroll = function() {
             let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             let scrolled = (winScroll / height) * 100;
             document.getElementById("scroll-progress").style.width = scrolled + "%";
-            
+
             const cta = document.getElementById("sticky-cta");
-            const formPos = document.getElementById("form-section").offsetTop;
-            if (scrolled > 15 && winScroll < (formPos - 500)) {
+            if (scrolled > 15 && scrolled < 85) {
                 cta.classList.add("active");
             } else {
                 cta.classList.remove("active");
             }
         };
 
-        // 2. Form Logic
+        // Modal Functions
+        function openModal() {
+            document.getElementById('quiz-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            // Reset modal
+            modalAnswers = {};
+            document.querySelectorAll('.modal-step').forEach(s => s.classList.add('hidden'));
+            document.getElementById('modal-step-1').classList.remove('hidden');
+            document.getElementById('modal-progress-bar').style.width = '25%';
+        }
+
+        function closeModal() {
+            document.getElementById('quiz-modal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on overlay click
+        document.getElementById('quiz-modal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        // Close modal on Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function modalNextStep(step, value) {
+            modalAnswers['step'+step] = value;
+            if (step === 3) {
+                if (modalAnswers['step1'] === 'solo' && modalAnswers['step3'] === '0') {
+                    document.getElementById('modal-step-3').classList.add('hidden');
+                    document.getElementById('modal-step-disq').classList.remove('hidden');
+                    document.getElementById('modal-progress-bar').style.width = "100%";
+                    return;
+                }
+            }
+            document.getElementById('modal-step-' + step).classList.add('hidden');
+            let next = step + 1;
+            document.getElementById('modal-step-' + next).classList.remove('hidden');
+            document.getElementById('modal-progress-bar').style.width = (next * 25) + "%";
+        }
+
+        function modalSubmitForm() {
+            const phone = document.getElementById('modal-phone').value;
+            if (phone.length < 10) { alert('Введите корректный номер WhatsApp'); return; }
+            console.log('Lead:', { ...modalAnswers, phone });
+            window.location.href = "thanks.html";
+        }
+
+        // Modal phone mask
+        document.getElementById('modal-phone').addEventListener('input', function (e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})/);
+            if (!x[2]) { e.target.value = '+7 (' + x[1]; return; }
+            e.target.value = '+7 (' + x[2] + (x[3] ? ') ' + x[3] : '') + (x[4] ? '-' + x[4] : '') + (x[5] ? '-' + x[5] : '');
+        });
+
+        // 2. Form Logic (for page form)
         function nextStep(step, value) {
             answers['step'+step] = value;
             if (step === 3) {
-                // Disqualification Rule: Solo + No Budget
                 if (answers['step1'] === 'solo' && answers['step3'] === '0') {
                     document.getElementById('step-3').classList.add('hidden');
                     document.getElementById('step-disq').classList.remove('hidden');
