@@ -45,7 +45,6 @@ export default async function handler(req, res) {
     const utm_source = String(data.utm_source || 'Прямой заход').trim();
     const utm_medium = String(data.utm_medium || '-').trim();
     const utm_campaign = String(data.utm_campaign || '-').trim();
-    const utm_term = String(data.utm_term || '-').trim();
     const utm_content = String(data.utm_content || '-').trim();
     const utm_adname = String(data.utm_adname || '-').trim();
 
@@ -91,8 +90,7 @@ export default async function handler(req, res) {
     message += `├ Medium: ${utm_medium}\n`;
     message += `├ Campaign: ${utm_campaign}\n`;
     message += `├ Content: ${utm_content}\n`;
-    message += `├ Ad Name: ${utm_adname}\n`;
-    message += `└ Term: ${utm_term}\n\n`;
+    message += `└ Ad Name: ${utm_adname}\n\n`;
 
     message += "🌐 <b>Дополнительно:</b>\n";
     message += `├ Страница: ${page_url}\n`;
