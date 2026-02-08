@@ -231,6 +231,9 @@
         .metrics-grid { grid-template-columns: 1fr !important; }
         .metrics-vs { display: none; }
 
+        /* --- FUNNEL GRID MOBILE --- */
+        .funnel-grid { grid-template-columns: 1fr !important; }
+
         /* --- STICKY CTA MOBILE --- */
         .sticky-cta-text { display: none; }
         .sticky-cta .btn { width: 100% !important; }
@@ -280,6 +283,7 @@
             .comparison-grid { grid-template-columns: 1fr 1fr !important; }
             .metrics-grid { grid-template-columns: 1fr auto 1fr !important; }
             .metrics-vs { display: block !important; }
+            .funnel-grid { grid-template-columns: 1fr 1fr !important; }
             .sticky-cta-text { display: block !important; }
             .sticky-cta .btn { width: auto !important; }
         }
@@ -350,27 +354,27 @@
                 <div class="card fade-up" style="margin-top: 40px; max-width: 900px; margin-left: auto; margin-right: auto;">
                     <ul class="checklist" style="list-style: none; padding: 0; margin: 0;">
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">Пробовали таргет или контекст, потратили кучу денег — получили холодные заявки, но ни одна не дошла до договора</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">Видите, как конкуренты растут и активно рекламируются, а у вас всё держится на сарафане и «рекомендациях»?</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">Вынуждены браться за мелкие дела с низким чеком, потому что нет стабильного потока платежеспособных клиентов на высокий чек</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">Не понимаете, как привлекать клиентов с деньгами, а не тех, кто ищет бесплатную консультацию</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">У вас или вашего менеджера не получается закрывать заявки с рекламы в оплату — клиент говорит «я подумаю» и пропадает, а вы впустую потратили время и деньги</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid #eee;">
-                            <span style="color: var(--primary); font-size: 22px; flex-shrink: 0;">☐</span>
+                            <span style="color: var(--accent-red); font-size: 22px; flex-shrink: 0; font-weight: bold;">✗</span>
                             <span style="font-size: 16px; line-height: 1.5;">Доход нестабильный, скачет от месяца к месяцу — невозможно планировать ни найм, ни развитие, но при этом вы прикладываете усилия чтобы продажи выросли</span>
                         </li>
                         <li class="checklist-item fade-up" style="display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; background: linear-gradient(90deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05)); margin: 0 -24px; padding-left: 24px; padding-right: 24px; border-radius: 8px;">
@@ -738,23 +742,86 @@
                 <h2 class="text-center fade-up">Наша метрика — деньги, а не заявки</h2>
                 <p class="text-center text-sec fade-up" style="max-width: 700px; margin: 0 auto 40px;">Любое агентство может нагнать вам 100 заявок. Но если ни одна не дойдёт до договора — это не маркетинг, это слив бюджета.</p>
 
-                <div class="grid metrics-grid fade-up" style="grid-template-columns: 1fr auto 1fr; gap: 20px; align-items: center; max-width: 900px; margin: 0 auto;">
-                    <div class="card text-center" style="background: #f8f8f8; border: 1px solid #e0e0e0;">
-                        <div style="font-size: 48px; font-weight: 800; color: #999;">100</div>
-                        <p style="margin: 10px 0 0; color: #666;">заявок от универсалов</p>
-                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-red); margin-top: 10px;">= 0 ₸</div>
-                        <p style="color: #888; font-size: 13px;">на счёте</p>
+                <div class="grid funnel-grid fade-up" style="grid-template-columns: 1fr 1fr; gap: 30px; max-width: 1100px; margin: 0 auto;">
+                    <!-- Воронка конкурентов -->
+                    <div class="card" style="background: #f8f8f8; border: 2px solid #e0e0e0; padding: 30px;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 60px; margin-bottom: 10px;">😭</div>
+                            <h3 style="color: #666; font-size: 18px; margin: 0;">Воронка конкурентов</h3>
+                            <p style="color: #999; font-size: 13px;">Обычное агентство</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="background: linear-gradient(90deg, #fecaca 0%, #fecaca 100%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 14px; color: #666;">Заявки</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">150</span>
+                            </div>
+                            <div style="text-align: center; color: #999; font-size: 12px;">↓ 10% записались</div>
+                            <div style="background: linear-gradient(90deg, #fecaca 0%, #fecaca 15%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 60%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: #666;">Записи</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">15</span>
+                            </div>
+                            <div style="text-align: center; color: #999; font-size: 12px;">↓ 33% дошли</div>
+                            <div style="background: linear-gradient(90deg, #fecaca 0%, #fecaca 5%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 40%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: #666;">Дошли</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">5</span>
+                            </div>
+                            <div style="text-align: center; color: #999; font-size: 12px;">↓ 0% купили</div>
+                            <div style="background: var(--accent-red); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 30%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: white;">Продаж</span>
+                                <span style="font-size: 18px; font-weight: 700; color: white;">0</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 20px; padding: 16px; background: #FEF2F2; border-radius: 8px; border: 1px solid var(--accent-red); text-align: center;">
+                            <div style="font-size: 28px; font-weight: 800; color: var(--accent-red);">-500 000 ₸</div>
+                            <p style="margin: 5px 0 0; color: #666; font-size: 13px;">потрачено на рекламу впустую</p>
+                        </div>
                     </div>
-                    <div class="metrics-vs" style="font-size: 32px; font-weight: 800; color: var(--primary);">VS</div>
-                    <div class="card text-center" style="background: linear-gradient(135deg, rgba(74,0,224,0.05), rgba(107,47,245,0.1)); border: 2px solid var(--primary);">
-                        <div style="font-size: 48px; font-weight: 800; color: var(--primary);">30</div>
-                        <p style="margin: 10px 0 0; color: #666;">квалифицированных лидов от нас</p>
-                        <div style="font-size: 32px; font-weight: 800; color: var(--accent-green); margin-top: 10px;">= 3-5 млн ₸</div>
-                        <p style="color: #888; font-size: 13px;">выручки</p>
+
+                    <!-- Наша воронка -->
+                    <div class="card" style="background: linear-gradient(135deg, rgba(74,0,224,0.05), rgba(16,185,129,0.05)); border: 2px solid var(--primary); padding: 30px;">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <div style="font-size: 60px; margin-bottom: 10px;">😎</div>
+                            <h3 style="color: var(--primary); font-size: 18px; margin: 0;">Наша воронка</h3>
+                            <p style="color: #888; font-size: 13px;">Система «Юрист на Миллион»</p>
+                        </div>
+
+                        <div style="display: flex; flex-direction: column; gap: 8px;">
+                            <div style="background: linear-gradient(90deg, #d1fae5 0%, #d1fae5 100%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;">
+                                <span style="font-size: 14px; color: #666;">Заявки</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">150</span>
+                            </div>
+                            <div style="text-align: center; color: var(--accent-green); font-size: 12px; font-weight: 600;">↓ 60% записались</div>
+                            <div style="background: linear-gradient(90deg, #d1fae5 0%, #d1fae5 60%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 80%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: #666;">Записи</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">90</span>
+                            </div>
+                            <div style="text-align: center; color: var(--accent-green); font-size: 12px; font-weight: 600;">↓ 67% дошли</div>
+                            <div style="background: linear-gradient(90deg, #d1fae5 0%, #d1fae5 40%); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 60%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: #666;">Дошли</span>
+                                <span style="font-size: 18px; font-weight: 700; color: #333;">60</span>
+                            </div>
+                            <div style="text-align: center; color: var(--accent-green); font-size: 12px; font-weight: 600;">↓ 33% купили</div>
+                            <div style="background: var(--accent-green); padding: 12px 16px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; width: 45%; margin: 0 auto;">
+                                <span style="font-size: 14px; color: white;">Продаж</span>
+                                <span style="font-size: 18px; font-weight: 700; color: white;">20</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 20px; padding: 16px; background: #ECFDF5; border-radius: 8px; border: 1px solid var(--accent-green); text-align: center;">
+                            <p style="margin: 0 0 5px; color: #666; font-size: 13px;">20 продаж × 600 000 ₸ =</p>
+                            <div style="font-size: 28px; font-weight: 800; color: var(--accent-green);">+12 000 000 ₸</div>
+                            <p style="margin: 5px 0 0; color: #666; font-size: 13px;">выручки за месяц</p>
+                        </div>
                     </div>
                 </div>
 
                 <p class="text-center fade-up" style="margin-top: 30px; font-style: italic; color: var(--text-sec);">Мы отвечаем за весь путь: от клика по рекламе до подписанного договора.</p>
+
+                <div class="text-center" style="margin-top: 30px;">
+                    <button onclick="openModal()" class="btn">ХОЧУ ТАКУЮ ВОРОНКУ →</button>
+                </div>
             </div>
         </section>
 
