@@ -1,0 +1,9 @@
+{
+  "name": "trust-traffic-site",
+  "version": "1.0.0",
+  "description": "Trust Traffic Landing Page with Telegram & amoCRM Integration",
+  "private": true,
+  "dependencies": {
+    "redis": "^4.6.12"
+  }
+}

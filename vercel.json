@@ -2,7 +2,19 @@
   "cleanUrls": true,
   "functions": {
     "api/send-telegram.js": {
+      "maxDuration": 15
+    },
+    "api/init-amocrm-tokens.js": {
+      "maxDuration": 10
+    },
+    "api/cron-refresh-token.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "crons": [
+    {
+      "path": "/api/cron-refresh-token",
+      "schedule": "0 6 * * *"
+    }
+  ]
 }
